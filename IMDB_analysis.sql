@@ -433,7 +433,7 @@ LIMIT 3;
 and 'The Wolverine'.
 Now, let’s find out the top two actors.*/
 
--- Q20. Who are the top two actors whose movies have a median rating >= 8?
+-- 20. Who are the top two actors whose movies have a median rating >= 8?
 SELECT 
 	n.name as actor_name,
 	COUNT(m.id) AS movie_count
@@ -609,6 +609,7 @@ FROM
     
 -- Rounding off is good to have and not a must have, the same thing applies to sorting.
 -- Let us find the top 5 movies for each year with the top 3 genres.
+
 -- 26. Which are the five highest-grossing movies in each year for each of the top three genres?
 -- Top 3 Genres based on most number of movies
 WITH top_genres AS
@@ -649,7 +650,7 @@ WHERE movie_rank<=5;
 /* Finally, let’s find out the names of the top two production houses that have produced the highest number of hits
    among multilingual movies.
    
-27. What are the top two production houses that have produced the highest number of hits (median rating >= 8) among
+-- 27. What are the top two production houses that have produced the highest number of hits (median rating >= 8) among
 multilingual movies? */
 WITH top_prod AS
 (
@@ -674,6 +675,7 @@ WHERE
 
 -- Multilingual is the important piece in the above question. It was created using POSITION(',' IN languages)>0.
 -- If there is a comma, that means the movie is of more than one language.
+
 -- 28. Who are the top 3 actresses based on the number of Super Hit movies (Superhit movie: average rating of movie > 8) in 'drama' genre?
 WITH actress_ratings AS (
     SELECT 
@@ -709,7 +711,7 @@ FROM
     actress_ratings
 LIMIT 3;
 
-/* Q29. Get the following details for top 9 directors (based on number of movies):
+-- 29. Get the following details for top 9 directors (based on number of movies):
 Director id
 Name
 Number of movies
